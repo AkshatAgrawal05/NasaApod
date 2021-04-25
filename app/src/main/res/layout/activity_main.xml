@@ -7,13 +7,13 @@
 
         <variable
             name="potd"
-            type="gov.nasa.apod.data.model.Response" />
+            type="gov.nasa.apod.data.model.ResPotd" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".ui.MainActivity">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline1"

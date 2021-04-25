@@ -2,7 +2,7 @@ package gov.nasa.apod.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Response(
+data class ResPotd(
 
     @field:SerializedName("date")
     val date: String? = null,
