@@ -1,11 +1,15 @@
 package gov.nasa.apod.di
 
+import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import gov.nasa.apod.data.local.AppDao
+import gov.nasa.apod.data.local.AppDatabase
 import gov.nasa.apod.data.remote.ApiService
 import gov.nasa.apod.data.repository.Repository
 import okhttp3.OkHttpClient
@@ -49,5 +53,14 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideRepository(apiService: ApiService) = Repository(apiService)
+    fun provideRepository(apiService: ApiService, appDao: AppDao) = Repository(apiService, appDao)
+
+    @Singleton
+    @Provides
+    fun provideDatabase(@ApplicationContext appContext: Context) =
+        AppDatabase.getDatabase(appContext)
+
+    @Singleton
+    @Provides
+    fun provideDao(db: AppDatabase) = db.appDao()
 }
