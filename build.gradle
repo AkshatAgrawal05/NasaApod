@@ -34,4 +34,6 @@ ext{
     espressoVersion = '3.2.0'
     junitVersion = '4.13'
     testExtJunitVersion = '1.1.2'
+    retrofitVersion = '2.9.0'
+    glideVersion = '4.12.0'
 }
