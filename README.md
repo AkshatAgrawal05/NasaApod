@@ -33,4 +33,5 @@ Dependencies used :
  2. Image is persisted using Glide cache strategy, DB blob can also be used for image storage
  3. Navigation component can also be used for Fragment navigation for future app improvements
  4. Data can be stored according to current days and fetched wrt to current day
+ 5. In api either video or image comes so mediatype check is added if media type is image then only we'll show image
  
